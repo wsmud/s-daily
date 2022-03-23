@@ -1,8 +1,3 @@
-const fs = require('fs');
-const path = require('path');
-const yaml = require('js-yaml');
-const { hunt } = yaml.load(fs.readFileSync(path.resolve(__dirname, '../../utils/gameInfo.yaml')));
-
 module.exports = function (tip) {
   if (tip.includes('说：')) {
     return;
@@ -12,7 +7,7 @@ module.exports = function (tip) {
     this.cmd.send(`taskover signin;taskover zz1;taskover zz2`);
     this.nowTask = 'hunt';
     this.attach(this.huntEvents);
-    this.cmd.send(hunt.way);
+    this.cmd.send(this.gameInfo.hunt.way);
   }
 
   if (tip.includes('完成度未满')) {
@@ -23,7 +18,7 @@ module.exports = function (tip) {
       this.cmd.send(`taskover signin;taskover zz1;taskover zz2`);
       this.nowTask = 'hunt';
       this.attach(this.huntEvents);
-      this.cmd.send(hunt.way);
+      this.cmd.send(this.gameInfo.hunt.way);
     }
   }
 };
