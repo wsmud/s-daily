@@ -83,3 +83,6 @@ store:
 hunt:
   npc: 扬州知府 程药发
   way: jh fam 0 start;go west;go north;go north
+xiangyang:
+  npc: <hio>北侠</hio> 郭靖
+  way: jh fam 8 start

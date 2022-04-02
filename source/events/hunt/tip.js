@@ -1,5 +1,3 @@
-const logger = require('../../librarys/logger');
-
 module.exports = function (tip) {
   if (tip.includes('说：')) {
     return;
@@ -14,11 +12,8 @@ module.exports = function (tip) {
   }
 
   if (/目前完成1\/20个|你的追捕任务已经完成了/.test(tip)) {
-    this.cmd.send('jh fam 0 start;go south;go east;sell all;wakuang');
-  }
-
-  if (tip.includes('你挥着铁镐开始认真挖矿')) {
-    this.socketClose();
-    logger.success(`「${this.userConfig.name}」任务完成`);
+    this.nowTask = 'xiangyang';
+    this.attach(this.xiangyangEvents);
+    this.cmd.send(this.gameInfo.xiangyang.way);
   }
 };

@@ -23,6 +23,7 @@ module.exports = class Daily extends Socket {
     this.sectEvents = [];
     this.dungeonEvents = [];
     this.huntEvents = [];
+    this.xiangyangEvents = [];
     this.loadEvents();
   }
 
@@ -37,6 +38,10 @@ module.exports = class Daily extends Socket {
       .map((fileName) => path.basename(fileName, '.js'));
     this.huntEvents = fs
       .readdirSync(path.resolve(__dirname, '../events/hunt'))
+      .filter((fileName) => fileName.endsWith('.js'))
+      .map((fileName) => path.basename(fileName, '.js'));
+    this.xiangyangEvents = fs
+      .readdirSync(path.resolve(__dirname, '../events/xiangyang'))
       .filter((fileName) => fileName.endsWith('.js'))
       .map((fileName) => path.basename(fileName, '.js'));
     this.attach(this.sectEvents);
