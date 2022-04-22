@@ -14,7 +14,7 @@ module.exports = function (data) {
       if (this.sectTaskInfo.inTask) {
         const tasker = findNpcByName(data.items, this.sect.tasker);
         this.sectTaskInfo.taskerId = tasker ? tasker.id : null;
-        this.cmd.send(tasker ? `task sm ${tasker.id}` : this.sect.taskWay);
+        this.cmd.send(tasker ? `task sm ${tasker.id}` : this.sect.taskerWay);
       }
       break;
     case this.sect.chiefRoomId:
