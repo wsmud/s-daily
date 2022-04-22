@@ -29,7 +29,7 @@ if (options.run) {
   });
 }
 
-schedule.scheduleJob(options.time ? options.time : '5 5 5 * * *', () => {
+schedule.scheduleJob(options.time ? options.time : '5 5 5,17 * * *', () => {
   const configs = yaml.load(fs.readFileSync('config.yaml'));
   configs.splice(0, 30).forEach((userConfig) => {
     loginQueue(configs, userConfig);
