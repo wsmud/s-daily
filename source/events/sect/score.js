@@ -7,5 +7,6 @@ module.exports = function (data) {
     return this.socketClose();
   }
   this.sect = userSect;
+  this.sectTaskInfo.inTask = true;
   this.cmd.send(`stopstate;${this.sect.taskerWay}`);
 };

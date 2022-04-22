@@ -14,10 +14,14 @@ module.exports = class Daily extends Socket {
     this.dungeonNum = 0;
     this.gameInfo = gameInfo;
     this.dungeon = 'cr yz/lw/shangu';
+    this.roomId = null;
     this.sectTaskInfo = {
+      inTask: false,
       taskerId: null,
       taskItem: null,
       seller: null,
+      sellerWay: null,
+      sellerRoomId: null,
     };
     this.nowTask = 'sect';
     this.sectEvents = [];

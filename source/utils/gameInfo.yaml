@@ -2,46 +2,63 @@ sect:
   - name: 武当派
     tasker: 武当派第三代弟子 谷虚道长
     taskerWay: jh fam 1 start;go north
+    taskerRoomId: wd/sanqing
     chiefTitle: 武当派首席弟子
     chiefWay: jh fam 1 start;go west;go northup
+    chiefRoomId: wd/taiziyan
   - name: 少林派
     tasker: 少林寺第四十代弟子 清乐比丘
     taskerWay: jh fam 2 start
+    taskerRoomId: shaolin/guangchang
     chiefTitle: 少林派大师兄
     chiefWay: jh fam 2 start;go north;go north;go northeast;go northwest;go north;go north
+    chiefRoomId: shaolin/lianwu
   - name: 华山派
     tasker: 市井豪杰 高根明
     taskerWay: jh fam 3 start
+    taskerRoomId: huashan/zhenyue
     chiefTitle: 华山派首席弟子
     chiefWay: jh fam 3 start;go westup;go north
+    chiefRoomId: huashan/lianwu
   - name: 峨眉派
     tasker: 峨眉派第五代弟子 苏梦清
     taskerWay: jh fam 4 start;go west
+    taskerRoomId: emei/miaomen
     chiefTitle: 峨眉大师姐
     chiefWay: jh fam 4 start;go west;go south
+    chiefRoomId: emei/guangchang
   - name: 逍遥派
     tasker: 聪辩老人 苏星河
     taskerWay: jh fam 5 start
+    taskerRoomId: xiaoyao/qingcaop
     chiefTitle: 逍遥派首席弟子
     chiefWay: jh fam 5 start;go west
+    chiefRoomId: xiaoyao/linjian3
   - name: 丐帮
     tasker: 丐帮七袋弟子 左全
     taskerWay: jh fam 6 start;go down
+    taskerRoomId: gaibang/shudongxia
     chiefTitle: 丐帮首席弟子
     chiefWay: jh fam 6 start;go down;go east;go east;go east
+    chiefRoomId: gaibang/mishi
   - name: 杀手楼
     tasker: 杀手教习 何小二
     taskerWay: jh fam 7 start;go north
+    taskerRoomId: shashou/datang
     chiefTitle: 金牌杀手
     chiefWay: jh fam 7 start;go north;go up;go up;go up;go up;go east
+    chiefRoomId: shashou/liangong
   - name: 无门无派
     tasker: 武馆教习
     taskerWay: jh fam 0 start;go south;go south;go west
+    taskerRoomId: yz/wuguan
     chiefTitle: null
     chiefWay: null
+    chiefRoomId: null
 store:
   - seller: 店小二
     way: jh fam 0 start;go north;go north;go east
+    roomId: yz/zuixianlou
     goods:
       - <wht>米饭</wht>
       - <wht>包子</wht>
@@ -55,6 +72,7 @@ store:
       - <hiy>神仙醉</hiy>
   - seller: 杂货铺老板 杨永福
     way: jh fam 0 start;go east;go south
+    roomId: yz/zahuopu
     goods:
       - <wht>布衣</wht>
       - <wht>钢刀</wht>
@@ -68,11 +86,13 @@ store:
       - <wht>鱼饵</wht>
   - seller: 药铺老板 平一指
     way: jh fam 0 start;go east;go east;go north
+    roomId: yz/yaopu
     goods:
       - <hig>金创药</hig>
       - <hig>引气丹</hig>
   - seller: 铁匠铺老板 铁匠
     way: jh fam 0 start;go east;go east;go south
+    roomId: yz/datiepu
     goods:
       - <wht>铁剑</wht>
       - <wht>钢刀</wht>

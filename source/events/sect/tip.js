@@ -7,9 +7,13 @@ module.exports = function (tip) {
 
   if (tip.includes('你去帮我找')) {
     this.sectTaskInfo.taskItem = tip.match(/<.+?>.+?<\/.+?>/)[0];
-    const seller = this.gameInfo.store.find(({ goods }) => goods.includes(this.sectTaskInfo.taskItem));
+    const seller = this.gameInfo.store.find(({ goods }) =>
+      goods.includes(this.sectTaskInfo.taskItem),
+    );
     if (seller) {
       this.sectTaskInfo.seller = seller.seller;
+      this.sectTaskInfo.sellerWay = seller.way;
+      this.sectTaskInfo.sellerRoomId = seller.roomId;
       this.cmd.send(seller.way);
     } else {
       this.cmd.send(`task sm ${this.sectTaskInfo.taskerId}`);
@@ -30,6 +34,7 @@ module.exports = function (tip) {
   }
 
   if (/你先去休息一下吧/.test(tip)) {
+    this.sectTaskInfo.inTask = false;
     this.cmd.send(this.sect.chiefWay);
   }
 };
