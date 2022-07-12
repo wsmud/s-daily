@@ -5,7 +5,7 @@ module.exports = function (tip) {
     return;
   }
 
-  if (tip.includes('再次进入襄阳城')) {
+  if (tip.includes('再次进入襄阳城') || tip.includes('你还是不要去添乱了')) {
     this.cmd.send('jh fam 0 start;go south;go east;sell all;wakuang');
   }
 
