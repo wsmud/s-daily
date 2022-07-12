@@ -5,8 +5,7 @@ module.exports = function (data) {
     }
 
     if (item.name === this.gameInfo.xiangyang.npc) {
-      this.cmd.send(`reward2 ${item.id}`);
-      this.cmd.send('jh fam 0 start;go south;go east;sell all;wakuang');
+      this.cmd.send(`reward2 ${item.id};transmoney`);
       return;
     }
   }
