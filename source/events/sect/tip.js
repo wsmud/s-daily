@@ -25,16 +25,22 @@ module.exports = function (tip) {
 
   if (tip.includes('你拿不下那么多东西')) {
     logger.warning(`「${this.userConfig.name}」背包已满`);
-    this.cmd.send('wakuang');
-    this.socketClose();
+    this.cmd.send('shop 2 1');
+    this.cmd.send('pack');
+    this.cmd.send(`task sm ${this.sectTaskInfo.taskerId}`);
   }
 
   if (tip.includes('你没有那么多的钱')) {
     logger.warning(`「${this.userConfig.name}」黄金不足`);
-    this.cmd.send('wakuang');
+    this.cmd.send(`wakuang`);
     this.socketClose();
   }
-
+  
+  if (tip.includes('你没有那么多的元宝')) {
+    logger.warning(`「${this.userConfig.name}」元宝不足`);
+    this.cmd.send(`wakuang`);
+    this.socketClose();
+  }
   if (/你先去休息一下吧/.test(tip)) {
     this.sectTaskInfo.inTask = false;
     this.cmd.send(this.sect.chiefWay);
